@@ -109,13 +109,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>From</label>
-                                            <input type="date" name="from_date" value="<?php if(isset($_GET['from_date'])){ echo $_GET['from_date']; } ?>" class="form-control">
+                                            <input type="date" name="invoice_item_from_date" value="<?php if(isset($_GET['invoice_item_from_date'])){ echo $_GET['invoice_item_from_date']; } ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label>To</label>
-                                            <input type="date" name="to_date" value="<?php if(isset($_GET['to_date'])){ echo $_GET['to_date']; } ?>" class="form-control">
+                                            <input type="date" name="invoice_item_to_date" value="<?php if(isset($_GET['invoice_item_to_date'])){ echo $_GET['invoice_item_to_date']; } ?>" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -140,9 +140,9 @@
                                 </tr>
                             </thead>
                             <?php
-                            if(isset($_GET['from_date'])&&isset($_GET['to_date'])){
-                                $from_date = $_GET['from_date'];
-                                $to_date = $_GET['to_date'];
+                            if(isset($_GET['invoice_item_from_date'])&&isset($_GET['invoice_item_to_date'])){
+                                $from_date = $_GET['invoice_item_from_date'];
+                                $to_date = $_GET['invoice_item_to_date'];
 
                                 $query= "SELECT invoice.invoice_no, invoice.date, customer.first_name, item.item_name, item.item_code, item_category.category, invoice_master.unit_price FROM invoice 
                                 LEFT JOIN customer ON invoice.customer=customer.id LEFT JOIN invoice_master ON invoice_master.item_id=item.id LEFT JOIN item ON item.item_category=item_category.id
