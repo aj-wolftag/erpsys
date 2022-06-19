@@ -158,7 +158,7 @@
                                             <td><?= $raw['first_name']; ?></td>
                                             <td><?= $raw['item_code']; ?></td>
                                             <td><?= $raw['item_count']; ?></td>
-                                            <td><?= $raw['amount']; ?></td>
+                                            <td><?= $raw['unit_price']; ?></td>
                                         </tr>
                                        <?php
                                     }
